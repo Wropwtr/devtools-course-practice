@@ -16,7 +16,7 @@ class NewtonMethodApp {
     std::string message_;
     typedef struct {
         double *polynom_coef;
-		int polynom_size;
+        int polynom_size;
     } Arguments;
 };
 
