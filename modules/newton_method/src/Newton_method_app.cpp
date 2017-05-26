@@ -12,7 +12,7 @@
 
 NewtonMethodApp::NewtonMethodApp() : message_("") {}
 
-void NewtonMethodApp::help(const char* appname, const char* message) {
+void NewtonMethodApp::Help(const char* appname, const char* message) {
     message_ =
         std::string(message) +
           "This is a newton method application.\n\n" +
@@ -25,12 +25,12 @@ void NewtonMethodApp::help(const char* appname, const char* message) {
           "and coefficients are double-precision numbers.\n\n";
 }
 
-bool NewtonMethodApp::validateNumberOfArguments(int argc, const char** argv) {
+bool NewtonMethodApp::ValidateNumberOfArguments(int argc, const char** argv) {
     if (argc == 1) {
-        help(argv[0]);
+        Help(argv[0]);
         return false;
     } else if (argc == 2) {
-        help(argv[0], "ERROR: Should be more than 2 arguments\n\n");
+        Help(argv[0], "ERROR: Should be more than 2 arguments\n\n");
         return false;
     }
     return true;
@@ -70,11 +70,11 @@ std::string NewtonMethodApp::operator()(int argc, const char** argv) {
             delete args.polynom_coef;
         return str;
     }
-    
+
     std::ostringstream stream;
-    
+
     NewtonMethod nm;
-    
+
     try {
         double root = nm.NewtonMethodPolynom(args.polynom_size,
             args.polynom_coef);
@@ -84,10 +84,10 @@ std::string NewtonMethodApp::operator()(int argc, const char** argv) {
         delete args.polynom_coef;
         return str;
     }
-    
+
     delete args.polynom_coef;
-    
+
     message_ = stream.str();
-    
+
     return message_;
 }
