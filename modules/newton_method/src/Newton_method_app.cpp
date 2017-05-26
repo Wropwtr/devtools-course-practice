@@ -55,13 +55,13 @@ std::string NewtonMethodApp::operator()(int argc, const char** argv) {
     }
     try {
         args.polynom_coef = NULL;
-        args.polynom_size = (int)parseDouble(argv[1]);
+        args.polynom_size = static_cast<int>(parseDouble(argv[1]));
         if (argc > 2 && args.polynom_size != argc-2) {
             throw std::string(
                 "Number of coefficients not equal polynom size!");
         }
         args.polynom_coef = new double[args.polynom_size];
-        for( int i = 2; i < argc; i++){
+        for ( int i = 2; i < argc; i++ ) {
             args.polynom_coef[i-2] = parseDouble(argv[i]);
         }
     }
