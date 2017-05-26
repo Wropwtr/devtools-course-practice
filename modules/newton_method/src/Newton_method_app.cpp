@@ -50,7 +50,7 @@ double parseDouble(const char* arg) {
 std::string NewtonMethodApp::operator()(int argc, const char** argv) {
     Arguments args;
 
-    if (!validateNumberOfArguments(argc, argv)) {
+    if (!ValidateNumberOfArguments(argc, argv)) {
         return message_;
     }
     try {
