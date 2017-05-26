@@ -66,8 +66,6 @@ std::string NewtonMethodApp::operator()(int argc, const char** argv) {
         }
     }
     catch(std::string& str) {
-        if (args.polynom_coef)
-            delete args.polynom_coef;
         return str;
     }
 
