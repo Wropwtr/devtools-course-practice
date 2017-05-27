@@ -73,7 +73,7 @@ TEST_F(NewtonMethodAppTest, Can_Detect_Wrong_Number_Format) {
     Assert("Wrong number format!");
 }
 
-TEST_F(NewtonMethodAppTest, Throw_Then_Zero_Size) {
+TEST_F(NewtonMethodAppTest, Throw_When_Zero_Size) {
     vector<string> args = {"0", "1"};
 
     Act(args);

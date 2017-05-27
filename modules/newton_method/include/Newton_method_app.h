@@ -15,7 +15,7 @@ class NewtonMethodApp {
     bool ValidateNumberOfArguments(int argc, const char** argv);
     std::string message_;
     typedef struct {
-        double *polynom_coef;
+        double* polynom_coef;
         int polynom_size;
     } Arguments;
 };

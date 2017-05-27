@@ -44,10 +44,10 @@ set_tests_properties (${prefix}_can_Detect_Wrong_Number_Format PROPERTIES
     LABELS "${MODULE}")
 
 add_test(
-    NAME ${prefix}_Throw_Then_Zero_Size
+    NAME ${prefix}_Throw_When_Zero_Size
     COMMAND ${APPLICATION} 0 1
 )
-set_tests_properties (${prefix}_Throw_Then_Zero_Size PROPERTIES
+set_tests_properties (${prefix}_Throw_When_Zero_Size PROPERTIES
     PASS_REGULAR_EXPRESSION "Number of coefficients not equal polynom size!"
     LABELS "${MODULE}")
 

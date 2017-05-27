@@ -9,7 +9,7 @@
 #include <string>
 
 double NewtonMethod::NewtonMethodPolynom(unsigned int size,
-                                                double *polynom_coef) {
+                                                double* polynom_coef) {
     if (size == 0)
         throw std::string("Polynom size can not be less than zero");
     double x = 0, x1 = 1;
@@ -53,7 +53,7 @@ void NewtonMethod::GeneateRandomPolynom(unsigned int size,
 }
 
 bool NewtonMethod::CheckRootPolynom(double x, double eps, unsigned int size,
-                                                   const double *coef) {
+                                                   const double* coef) {
     return fabs(PolynomValue(size, x, coef)) < eps;
 }
 
@@ -62,7 +62,7 @@ bool NewtonMethod::CheckRootFunction(double x, double eps) {
 }
 
 double NewtonMethod::PolynomValue(unsigned int size, double x,
-                                                   const double * coef) {
+                                                   const double* coef) {
     double sum = 0.0;
     for (unsigned int k = 0; k < size; k++) {
         sum += (coef[k] * pow(x, k));
@@ -71,7 +71,7 @@ double NewtonMethod::PolynomValue(unsigned int size, double x,
 }
 
 void NewtonMethod::CalculateDerivativePolynom(unsigned int size,
-    const double * polynom_coef, double * polynom_derivative_coef) {
+    const double* polynom_coef, double* polynom_derivative_coef) {
     for (int unsigned i = 0; i < size; i++) {
         polynom_derivative_coef[i] = (i + 1) * polynom_coef[i + 1];
     }
